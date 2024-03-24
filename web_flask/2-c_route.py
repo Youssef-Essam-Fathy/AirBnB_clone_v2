@@ -20,7 +20,8 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
     '''Function returns HBNB statement'''
-    return 'c {}'.format(text.replace('_', ' '))
+    text = text.replace('_', ' ')
+    return 'c {}'.format(text)
 
 
 if __name__ == '__main__':
