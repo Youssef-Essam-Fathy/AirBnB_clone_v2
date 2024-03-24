@@ -14,6 +14,7 @@ classes = {
             'State': State, 'City': City, 'Amenity': Amenity,
             'Review': Review}
 
+
 class FileStorage:
     """ manages storage of hbnb as JSON """
     __file_path = 'file.json'
@@ -24,7 +25,7 @@ class FileStorage:
         f_b_c = {}
         if cls:
             for op, vlvl in FileStorage.__objects.items():
-                if vlvl.__class__ == cls or vlvl.__class__.__name__ ==cls:
+                if vlvl.__class__ == cls or vlvl.__class__.__name__ == cls:
                     f_b_c[op] = vlvl
             return f_b_c
         return FileStorage.__objects
@@ -44,7 +45,7 @@ class FileStorage:
 
     def reload(self):
         """Loads storage dictionary"""
-      
+
         try:
             sto = {}
             with open(FileStorage.__file_path, 'r') as fillle:

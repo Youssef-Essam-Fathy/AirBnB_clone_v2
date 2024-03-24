@@ -38,8 +38,13 @@ class DBStorage:
         '''
         query for all obj on session
         '''
-       classes = {"Amenity": Amenity, "City": City,
-           "Place": Place, "Review": Review, "State": State, "User": User}
+        classes = {
+            "Amenity": Amenity,
+            "City": City,
+            "Place": Place,
+            "Review": Review,
+            "State": State,
+            "User": User}
 
         rsrs = {}
         q_r = []
@@ -73,10 +78,10 @@ class DBStorage:
     def delete(self, obj=None):
         '''delete data from session'''
         if obj is not None:
-           self.__session.delete(obj)
+            self.__session.delete(obj)
 
     def reload(self):
-	''' reload data at the db '''
+        ''' reload data at the db '''
         Base.metadata.create_all(self.__engine)
         ses_fact = sessionmaker(
             bind=self.__engine, expire_on_commit=False)
