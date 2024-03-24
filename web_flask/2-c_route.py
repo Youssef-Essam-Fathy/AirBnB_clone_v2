@@ -1,30 +1,27 @@
 #!/usr/bin/python3
-""" 2. Script to start a Flask web application with 3 view functions """
-
+''' a script to start the Flask web application'''
 from flask import Flask
 
-
 app = Flask(__name__)
-app.url_map.strict_slashes = False
 
 
-@app.route('/')
-def hello_world():
-    """ Returns some text. """
+@app.route('/', strict_slashes=False)
+def hello_hbnb():
+    '''Function returns hello statement'''
     return 'Hello HBNB!'
 
 
-@app.route('/hbnb')
-def hello():
-    """ Return other text. """
+@app.route('/hbnb', strict_slashes=False)
+def hbnb():
+    '''Function returns HBNB statement'''
     return 'HBNB'
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
-    """ replace text with variable. """
+    '''Function returns HBNB statement'''
     text = text.replace('_', ' ')
-    return 'C {}'.format(text)
+    return 'c {}'.format(text)
 
 
 if __name__ == '__main__':
