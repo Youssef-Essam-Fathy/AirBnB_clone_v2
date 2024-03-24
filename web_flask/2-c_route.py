@@ -3,25 +3,25 @@
 from flask import Flask
 
 app = Flask(__name__)
-app.url_map.strict_slashes = False
 
-@app.route('/')
+
+@app.route('/', strict_slashes=False)
 def hello_hbnb():
     '''Function returns hello statement'''
     return 'Hello HBNB!'
 
 
-@app.route('/hbnb')
+@app.route('/hbnb', strict_slashes=False)
 def hbnb():
     '''Function returns HBNB statement'''
     return 'HBNB'
 
 
-@app.route('/c/<text>')
+@app.route('/c/<text>', strict_slashes=False)
 def c_text(text):
     '''Function returns HBNB statement'''
     text = text.replace('_', ' ')
-    return 'c {}'.format(text)
+    return 'C {}'.format(text)
 
 
 if __name__ == '__main__':
